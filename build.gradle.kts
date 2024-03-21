@@ -1,10 +1,12 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
+  kotlin("jvm") version "1.9.23"
+  kotlin("plugin.spring") version "1.9.23"
+  id("com.ncorti.ktfmt.gradle") version "0.17.0"
   id("io.spring.dependency-management") version "1.1.4"
   id("org.springframework.boot") version "3.2.3"
-  kotlin("jvm") version "1.9.22"
-  kotlin("plugin.spring") version "1.9.22"
+  id("org.springdoc.openapi-gradle-plugin") version "1.8.0"
 }
 
 group = "com.reproduce"
@@ -21,6 +23,12 @@ dependencies {
   implementation("org.jetbrains.kotlin:kotlin-reflect")
   implementation("org.springdoc:springdoc-openapi-starter-common:2.4.0")
   implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.4.0")
+  implementation("org.jetbrains.kotlin:kotlin-reflect:1.9.23")
+  implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.23")
+  implementation("org.springframework.boot:spring-boot-starter")
+  implementation("org.springframework.boot:spring-boot-starter-actuator")
+  implementation("org.springframework.boot:spring-boot-starter-cache")
+  implementation("org.springframework.boot:spring-boot-starter-webflux")
   testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
